@@ -1,5 +1,7 @@
 package modele;
 
+import java.util.Arrays;
+
 public class Quartier {
     // Attributs privés
     private String nom;
@@ -8,10 +10,11 @@ public class Quartier {
     private String caracteristiques;
 
     // La constante TYPE QUARTIERS
-    public static final String[] TYPE_QUARTERS ={"RELIGIEUX", "MILITAIRE", "NOBLE", "COMMERCANT", "MERVEILLE"};
+    public static final String[] TYPE_QUARTIERS ={"RELIGIEUX", "MILITAIRE", "NOBLE", "COMMERCANT", "MERVEILLE"};
+
 
     //Implementation des accesseurs de l'attribut nom
-    public String getNom(String nom){
+    public String getNom(){
         return this.nom;
     }
     public void setNom(String nom){
@@ -25,7 +28,7 @@ public class Quartier {
 
     public void setType(String type){
         //Verifie que l'arguement correspond à TYPE_QUARTIERS
-        if(type.equals(TYPE_QUARTERS)) {
+        if(Arrays.asList(TYPE_QUARTIERS).contains(type)) {
             this.type = type;
         } else {
             this.type = "";
@@ -55,8 +58,15 @@ public class Quartier {
     public void setCaracteristiques(String caracteristiques) {
         this.caracteristiques = caracteristiques;
     }
+    //Constructeur sans arguments
+    public Quartier() {
+        this.nom = "";
+        this.type = "";
+        this.coutConstruction = 0;
+        this.caracteristiques = "";
+    }
 
-    // Constructeur
+    // Constructeur avec arguments
     public Quartier(String nom, String type, int coutConstruction, String caracteristiques) {
         // Utilisation des accesseurs de chaque attribut pour les initialiser
         setNom(nom);
