@@ -74,4 +74,11 @@ public class Quartier {
         setCout(coutConstruction);
         setCaracteristiques(caracteristiques);
     }
+
+    public Quartier(String nom, String type, int coutConstruction) {
+        this.nom = nom;
+        this.type = type;
+        this.coutConstruction = coutConstruction;
+    }
+
 }
