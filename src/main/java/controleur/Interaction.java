@@ -41,7 +41,6 @@ public class Interaction {
                 continu = false;
             } catch (ArrayIndexOutOfBoundsException | InputMismatchException e) {
                 System.out.print("Veuillez rentrer un chiffre  compris entre "+borneMin+" compris et "+borneMax+" non compris : ");
-                //sc.next(); // passe l'entier pour eviter de boucler
             }
         } while(continu);
         return i;
@@ -51,24 +50,24 @@ public class Interaction {
     public static boolean lireOuiOuNon() {
         int element1 = 0;
         int element2 = 1;
-        //System.out.println(element1/element2);
+
         boolean retour = true;
         boolean continu = true;
         String reponse = "";
         do {
             reponse = sc.nextLine();
             reponse.toLowerCase();
-            //System.out.println(reponse);
+
             if (reponse.equals("o") || reponse.equals("oui")) {
                 retour = true;
                 element1 = 1;
-                //System.out.println(reponse);
+
             }else if (reponse.equals("n") || reponse.equals("non")) {
                 retour = false;
                 element1 = 1;
-                //System.out.println(reponse);
+
             }
-            //System.out.println(element1);
+
             try {
                 element1=element2/element1;
                 continu = false;
@@ -100,7 +99,4 @@ public class Interaction {
         } while(continu);
         return retour;
     }
-
-
-
 }
