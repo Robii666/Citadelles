@@ -5,7 +5,7 @@ import java.util.Random;
 public class Architecte extends Personnage{
 	
 	public Architecte() {
-		super("Architecte", 6, Caracteristiques.ARCHITECTE);
+		super("Architecte", 7, Caracteristiques.ARCHITECTE);
 		this.pioche = new Pioche();
 		gen = new Random(100);
 	}
