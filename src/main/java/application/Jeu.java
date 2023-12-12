@@ -2,6 +2,7 @@ package application;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 import modele.Joueur;
 import modele.Personnage;
@@ -47,14 +48,15 @@ public class Jeu {
     }
 
     public void jouerPartie() {
-            initialisation();
+            this.initialisation();
 
-            while (!partieFinie()) {
-                tourDeJeu();
-                gestionCouronne();
-                reinitialisationPersonnages();
-            }
-            calculDesPoints();
+            do {
+                this.tourDeJeu();
+                this.gestionCouronne();
+                this.reinitialisationPersonnages();
+            }while(this.partieFinie()==false);
+
+            this.calculDesPoints();
     }
 
 
@@ -66,8 +68,9 @@ public class Jeu {
         this.plateauDeJeu.ajouterPioche(pioche);
 
         //Ajout des joueurs
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Quel est votre nom?");
-        String util = Interaction.lireUneChaine();
+        String util = scanner.nextLine();
         Joueur ordi1 = new Joueur("ordinateurUn");
         Joueur ordi2 = new Joueur("ordinateurDeux");
         Joueur ordi3 = new Joueur("ordinateurTrois");
