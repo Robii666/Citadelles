@@ -10,12 +10,10 @@ public class Voleur extends Personnage{
         super("Voleur", 2, Caracteristiques.VOLEUR);
         this.interaction = new Interaction();
         gen = new Random(8);
-        // TODO Auto-generated constructor stub
     }
 
     @Override
     public void utiliserPouvoir() {
-        // TODO Auto-generated method stub
         System.out.println(this.getJoueur().getNom());
         System.out.println(this.getJoueur().nbPieces());
         int choix = 0;
