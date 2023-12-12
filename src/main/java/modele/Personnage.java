@@ -73,6 +73,7 @@ public abstract class Personnage {
         }
         this.vole = false;
         this.assassine = false;
+        this.joueur = null;
 
     }
 
@@ -102,13 +103,17 @@ public abstract class Personnage {
     
 
     public void setJoueur(Joueur joueur){
-
-        this.joueur.monPersonnage = this;
+        if (joueur != null) {
+            joueur.monPersonnage = this;
+        } else {
+            System.out.println("Essayer de définir le joueur null pour" + this.getNom());
+        }
+            this.joueur = joueur;
     }
     public void setVole(){
         this.vole = true;
     }
-    public void setAssasine(){
+    public void setAssassine(){
         this.assassine = true;
     }
     public void setPlateau(PlateauDeJeu p){
