@@ -68,9 +68,12 @@ public abstract class Personnage {
    
     
     public void reinitialiser(){
-    	this.joueur = null;
+        if (this.joueur!=null) {
+            this.joueur.monPersonnage = null;
+        }
         this.vole = false;
         this.assassine = false;
+
     }
 
 
@@ -99,7 +102,8 @@ public abstract class Personnage {
     
 
     public void setJoueur(Joueur joueur){
-        this.joueur = joueur;
+
+        this.joueur.monPersonnage = this;
     }
     public void setVole(){
         this.vole = true;
