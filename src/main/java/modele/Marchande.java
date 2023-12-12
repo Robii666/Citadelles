@@ -8,6 +8,13 @@ public class Marchande extends Personnage {
 
 	@Override
 	public void utiliserPouvoir() {
+
+		this.getJoueur().ajouterPieces(1);
+	}
+
+	@Override
+	public void utiliserPouvoirAvatar() {
+		// TODO Auto-generated method stub
 		this.getJoueur().ajouterPieces(1);
 	}
 	public void percevoirRessourcesSpecifiques() {

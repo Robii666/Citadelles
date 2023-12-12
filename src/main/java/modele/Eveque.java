@@ -10,6 +10,11 @@ public class Eveque extends Personnage {
 	public void utiliserPouvoir() {
 		//Pas de pouvoir.
 	}
+	@Override
+	public void utiliserPouvoirAvatar() {
+		// TODO Auto-generated method stub
+
+	}
 	public void percevoirRessourcesSpecifiques() {
 	
 		int piecesReligieuses=0;

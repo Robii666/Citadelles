@@ -32,5 +32,12 @@ public class Roi extends Personnage {
     public void setAssassine() {
         super.setAssassine();
     }
+
+    @Override
+    public void utiliserPouvoirAvatar() {
+        if (this.getJoueur()!=null) {
+            this.getJoueur().setPossedeCouronne(true);
+        }
+    }
 }
 
