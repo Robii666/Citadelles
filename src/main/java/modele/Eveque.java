@@ -1,6 +1,6 @@
 package modele;
 
-public class Eveque extends Personnages {
+public class Eveque extends Personnage {
 
 	public Eveque() {
 		super("Eveque", 5, Caracteristiques.EVEQUE);
