@@ -14,13 +14,15 @@ public class Jeu {
     private PlateauDeJeu plateauDeJeu;
     private int numeroConfiguration;
     private Random generateur;
+    private int nbrJoueurCiteFini;
+
 
     // Constructeur
     public Jeu() {
         // Initialisation des attributs dans le constructeur
-        this.plateauDeJeu = new PlateauDeJeu();
-        this.numeroConfiguration = 0;
-        this.generateur = new Random();
+        generateur = new Random();
+        plateauDeJeu = new PlateauDeJeu();
+        nbrJoueurCiteFini = 0;
     }
 
     // Methode public pour démarrer le jeu
