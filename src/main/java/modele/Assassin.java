@@ -68,7 +68,6 @@ import controleur.Interaction;
             do {
                 System.out.print("Votre choix : ");
                 choix=gen.nextInt();
-                //interaction.lireUnEntier();
 
                 if (choix >= 2 && choix <= 8) {
                     condition = false;
