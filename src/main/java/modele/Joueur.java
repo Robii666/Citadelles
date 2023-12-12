@@ -10,7 +10,7 @@ public class Joueur {
     private int nbQuartiers;
     private ArrayList<Quartier> main;
     private boolean possedeCouronne;
-
+    protected Personnage monPersonnage;
 
     public Joueur(String nom) {
         this.nom = nom;
@@ -18,62 +18,77 @@ public class Joueur {
         this.tresor = 0;
         this.main = new ArrayList<Quartier>();
         this.possedeCouronne = false;
+        this.monPersonnage = null;
 
     }
-    public String getNom() {
+    public String getNom () {
+
         return nom;
     }
 
-    public int nbPieces() {
-        return tresor;
+    public Personnage getPersonnage() {
+        return monPersonnage;
     }
 
-    public int nbQuartiersDansCite() {
-        return nbQuartiers;
+    public void setMonPersonnage(Personnage personnage) {
+        this.monPersonnage=personnage;
+    }
+    public int nbPieces () {
+
+            return tresor;
     }
 
-    public Quartier[] getCite() {
-        return cite;
+    public int nbQuartiersDansCite () {
+            return nbQuartiers;
     }
 
-    public ArrayList<Quartier> getMain() {
-        return main;
+    public Quartier[] getCite () {
+
+            return cite;
     }
 
-    public int nbQuartiersDansMain() {
-        return main.size();
+    public ArrayList<Quartier> getMain () {
+
+            return main;
     }
 
-    public boolean getPossedeCouronne() {
-        return possedeCouronne;
+    public int nbQuartiersDansMain () {
+
+            return main.size();
     }
 
-    public void setPossedeCouronne(boolean b) {
-        possedeCouronne = b;
+    public boolean getPossedeCouronne () {
+
+            return possedeCouronne;
     }
 
-    public void ajouterPieces(int unePiece) {
-        if(unePiece>0) {
+    public void setPossedeCouronne ( boolean b){
 
-            this.tresor = tresor+unePiece;
+            possedeCouronne = b;
+    }
+
+    public void ajouterPieces ( int unePiece){
+        if (unePiece > 0) {
+
+            this.tresor = tresor + unePiece;
         }
     }
 
 
-    public void retirerPieces(int unePiece) {
-        if(unePiece > 0 && unePiece <= this.tresor) {
-            this.tresor = this.tresor-unePiece;
+    public void retirerPieces ( int unePiece){
+        if (unePiece > 0 && unePiece <= this.tresor) {
+                this.tresor = this.tresor - unePiece;
         }
     }
 
-    public void ajouterQuartierDansCite(Quartier quartier) {
+    public void ajouterQuartierDansCite (Quartier quartier){
         if (nbQuartiers < 8) {
             cite[nbQuartiers] = quartier;
             nbQuartiers++;
         }
     }
 
-    public boolean quartierPresentDansCite(String nom) {
+    public boolean quartierPresentDansCite (String nom){
         for (Quartier quartier : cite) {
             if (quartier != null && quartier.getNom().equals(nom)) {
                 return true;
@@ -82,7 +97,7 @@ public class Joueur {
         return false;
     }
 
-    public Quartier retirerQuartierDansCite(String quartier) {
+    public Quartier retirerQuartierDansCite (String quartier){
         Quartier q = null;
         int j = 0;
 
@@ -93,20 +108,20 @@ public class Joueur {
                 q = this.cite[i];
             }
         }
-        if (q!=null) {
+        if (q != null) {
             for (int i = j; i < nbQuartiers; i++) {
-                this.cite[i] = this.cite[i+1];
+                this.cite[i] = this.cite[i + 1];
             }
             this.nbQuartiers--;
         }
         return q;
     }
 
-    public void ajouterQuartierDansMain(Quartier quartier) {
+    public void ajouterQuartierDansMain (Quartier quartier){
         getMain().add(quartier);
     }
 
-    public Quartier retirerQuartierDansMain() {
+    public Quartier retirerQuartierDansMain () {
         System.out.println(this.main.size());
         if (this.main.size() > 0) {
             Random generateur = new Random();
@@ -114,10 +129,10 @@ public class Joueur {
             Quartier retire = this.main.get(numeroHasard);
             this.main.remove(numeroHasard);
             return retire;
-        }else return null;
+        } else return null;
 
     }
-    public void reinitialiser() {
+    public void reinitialiser () {
 
         this.main.clear();
         this.tresor = 0;
